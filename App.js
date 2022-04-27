@@ -51,12 +51,9 @@ if (errorMsg) {
   const getData = () => {
     console.log('getData');
     setLoading(true);
-    //Service to get the data from the server to render
     fetch('http://dev.virtualearth.net/REST/V1/Routes/LocalInsights?waypoint='+lat+','+log+'&TravelMode=Driving&Optimize=time&MaxTime=30&TimeUnit=Minute&type=Hospitals&key=Akm-NUKYwLBqtU3z7n7uftlnRXC6iv55a9VqDZEkxLas1QkYTQeOTn3Isr0MRP9w')
-      //Sending the currect offset with get request
       .then((response) => response.json())
       .then((responseJson) => {
-        //Successful response
         setOffset(offset + 1);
       console.log(responseJson.resourceSets[0].resources[0].categoryTypeResults[0].entities);
         setDataSource(responseJson.resourceSets[0].resources[0].categoryTypeResults[0].entities);
@@ -69,12 +66,10 @@ if (errorMsg) {
 
   const renderFooter = () => {
     return (
-      //Footer View with Load More button
       <SafeAreaView style={styles.footer}>
         <TouchableOpacity
           activeOpacity={0.9}
           onPress={getData}
-          //On Click of button load more data
           style={styles.loadMoreBtn}>
           <Text style={styles.btnText}>Load Nearby Hospitals</Text>
           {loading ? (
@@ -89,7 +84,6 @@ if (errorMsg) {
 
   const ItemView = ({item}) => {
     return (
-      // Flat List Item
       <Text
         style={{fontSize:18}}
         onPress={() => getItem(item)}>
@@ -102,7 +96,6 @@ if (errorMsg) {
 
   const ItemSeparatorView = () => {
     return (
-      // Flat List Item Separator
       <View
         style={{
           height: 2,
@@ -114,7 +107,6 @@ if (errorMsg) {
   };
 
   const getItem = (item) => {
-    //Function for click on an item
     alert();
   };
 
