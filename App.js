@@ -91,7 +91,7 @@ if (errorMsg) {
     return (
       // Flat List Item
       <Text
-        style={styles.itemStyle}
+        style={{fontSize:18}}
         onPress={() => getItem(item)}>
           
         {item.entityName}
@@ -123,7 +123,7 @@ if (errorMsg) {
     <SafeAreaView style={{flex: 1}}>
      
       <View style={styles.container}>
-      <Text style={{padding:"3%",alignItems: 'center',fontWeight: 'bold'}}>Hospitals in 30 mins by driving</Text>
+      <Text style={{padding:"4%",alignItems: 'center',fontWeight: 'bold',fontSize:15}}>Hospitals in 30 mins by driving</Text>
       
         <FlatList
           data={dataSource}
@@ -141,7 +141,6 @@ if (errorMsg) {
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    alignItems: 'center',
     flex: 1,
   },
   footer: {
@@ -160,7 +159,7 @@ const styles = StyleSheet.create({
   },
   btnText: {
     color: 'white',
-    fontSize: 15,
+    fontSize: 20,
     textAlign: 'center',
   },
 });
